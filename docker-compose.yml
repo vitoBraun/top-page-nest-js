@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  mongodb_container:
+    image: mongo:latest
+    restart: always
+    command: mongod --port 27018
+    ports:
+      - '27018:27018'
+    volumes:
+      - mongodb_data_container:/data/db
+
+volumes:
+  mongodb_data_container:
